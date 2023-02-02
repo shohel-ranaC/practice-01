@@ -343,3 +343,82 @@ let inputTemperature = temperatureConverter(50);
 console.log(inputTemperature);
 let inputTemperature2 = temperatureConverter(103);
 console.log(inputTemperature2);
+
+// Delete a property from an object
+
+// Write a function deleteProp which takes an array. The first element will be an object, and the second element will be a string prop. If the object(first element) has a property prop, the function removes the property from the object and returns ’YES’; in all other cases it returns’NO’.
+
+// Reverse The String
+
+// Write a function solution that takes a string parameter and returns the word in reverse order.
+// In this task, you are given an input string and the task is to reverse the input string.
+
+const reverseMaker = (word) => {
+  let reverseSum = "";
+  for (let i = word.length - 1; i >= 0; i--) {
+    let string = word[i];
+    reverseSum += string;
+  }
+  return reverseSum;
+};
+let inputStr = reverseMaker("GeeksforGeeks");
+console.log(inputStr);
+let inputStr2 = reverseMaker("Hello");
+console.log(inputStr2);
+
+// same problem will solved another way
+const reverseMaker2 = (word) => {
+  let wordSplit = word.split("");
+  let wordReverse = wordSplit.reverse();
+  let reverseJoin = wordReverse.join("");
+  return reverseJoin;
+};
+let inputString = reverseMaker2("GeeksforGeeks");
+console.log(inputString);
+
+// Detect vowel and consonent
+
+const solution = (letter) => {
+  if (
+    letter === "a" ||
+    letter === "e" ||
+    letter === "i" ||
+    letter === "o" ||
+    letter === "u"
+  ) {
+    letterIs = "VOWEL";
+  } else {
+    letterIs = "CONSONANT";
+  }
+  return letterIs;
+};
+let inputLetter = solution("a");
+console.log(inputLetter);
+let inputLetter2 = solution("u");
+console.log(inputLetter2);
+let inputLetter3 = solution("k");
+console.log(inputLetter3);
+
+// Suppose you want to create a shopping cart where it will calculate the total price of the products added. Implement a function totalCost that will take an array of objects where each object will have two properties: name and price. The function totalCost will take the array of objects as a parameter and return the total price of the products added to the shopping cart.
+
+const totalCost = (products) => {
+  let sum = 0;
+  for (let i = 0; i < products.length; i++) {
+    let objectProp = products[i];
+    let price = objectProp["price"];
+    sum += price;
+  }
+  return sum;
+};
+let inputObject = totalCost([
+  { name: "Dano Milk", price: 500 },
+  { name: "Taaza Tea", price: 200 },
+  { name: "Fresh Sugar", price: 300 },
+]);
+console.log(inputObject);
+let inputObject2 = totalCost([
+  { name: "Samsung M33", price: 10000 },
+  { name: "Samsung Charger", price: 500 },
+  { name: "Haveit Speakers", price: 2500 },
+]);
+console.log(inputObject2);
