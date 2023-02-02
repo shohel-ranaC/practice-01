@@ -142,3 +142,204 @@ function tallestFriend(height) {
 }
 let givenHeight = tallestFriend([157, 134, 188]);
 console.log(givenHeight);
+
+// Is it Isosceles??
+// You are given a triangle with three sides as input. Write a function checkTriangle to check whether a triangle is Isosceles or not using if-else.
+
+// Isosceles means two sides are equal
+
+// Sample Input-1: 9,8,9
+// Sample output: Yes
+// Sample Input-2: 8,8,8
+// Sample output: No
+
+function checkTriangle(side1, side2, side3) {
+  if (side1 === side2 && side2 === side3 && side1 === side3) {
+    console.log("No");
+  } else if (side1 === side2 || side2 === side3 || side1 === side3) {
+    console.log("Yes");
+  }
+}
+checkTriangle(9, 8, 9);
+checkTriangle(8, 8, 8);
+
+// Find the largest number
+
+function findMax(arr) {
+  let maxArray = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    let arrCount = arr[i];
+    if (arrCount > maxArray) {
+      maxArray = arrCount;
+    }
+  }
+  return maxArray;
+}
+let givenNumber = findMax([55, 10, 95]);
+console.log(givenNumber);
+
+// Sample Input: 20  13  37
+// Sample Output: 70
+
+function finalScore(scores) {
+  let sum = 0;
+  for (let i = 0; i < scores.length; i++) {
+    let number = scores[i];
+    sum += number;
+  }
+  return sum;
+}
+let inputNumber = finalScore([20, 13, 37]);
+console.log(inputNumber);
+
+// You received your final exam results. Write a function find to find your grades using if-else.
+// 80 or above A grade
+// 60 or above B grade
+// 50 or above C grade
+// 40 or above D grade
+// 39 or less => F grade
+
+// Sample Input: 95
+// Output: A
+
+function findGrade(marks) {
+  if (marks >= 80) {
+    grade = "A";
+  } else if (marks >= 60) {
+    grade = "B";
+  } else if (marks >= 50) {
+    grade = "C";
+  } else if (marks >= 40) {
+    grade = "D";
+  } else if (marks <= 39) {
+    grade = "F";
+  } else {
+    grade = "please valid grade number";
+  }
+  return grade;
+}
+let inputGarde = findGrade(95);
+console.log(inputGarde);
+
+// This year, not only Jim & Dela but also Chinku are doing hard work to secure the first position. Can you find out who will get the delicious cake?
+
+// Input:
+// The input line has three values, x (The marks Jim has got), y (The marks Dela has got) and z (The marks Chinku has got) .
+
+// Sample Input-1: 84  99  77
+// Sample Output-1: Dela
+
+function JimOrDelaOrChinku(marksOfJim, marksOfDela, marksOfChinku) {
+  if (marksOfJim > marksOfDela && marksOfJim > marksOfChinku) {
+    topper = "The Marks Jim has got";
+  } else if (marksOfDela > marksOfChinku) {
+    topper = "The Marks Dela has got";
+  } else {
+    topper = "The Marks Chinku has got";
+  }
+  return topper;
+}
+let inputMark = JimOrDelaOrChinku(84, 99, 77);
+console.log(inputMark);
+
+// same problem just you can take two input and will tooper
+
+function JimOrDela(marksOfJim, marksOfDela) {
+  if (marksOfJim > marksOfDela) {
+    mark = "Jim";
+  } else {
+    mark = "Dela";
+  }
+  return mark;
+}
+let givenMark = JimOrDela(84, 75);
+console.log(givenMark);
+
+// Remainder Operation
+
+function findRemainder(mod) {
+  let remainder = mod % 5;
+  return remainder;
+}
+let givenReminder = findRemainder(119);
+console.log(givenReminder);
+
+// Input:
+// The first and the second lines of the input contain the strings.
+
+// Output:
+// Print the result in one line.
+
+// Sample Input:
+// I am going to be
+// an awesome web developer
+
+// Output: I am going to be an awesome web developer
+
+function stringCombine(str1, str2) {
+  let oneLineString = str1.concat(" ", str2);
+  return oneLineString;
+}
+let givenString = stringCombine("I am going to be", "an awesome web developer");
+console.log(givenString);
+
+// Find the average
+
+// Sample Input: [75.25, 65, 80, 35.45, 99.50]
+// Output: 71.04
+// Sample Input: [100, 100, 100, 100, 100]
+// Output: 100
+
+function average(arrOfMarks) {
+  let arraySum = 0;
+  for (let i = 0; i < arrOfMarks.length; i++) {
+    let array = arrOfMarks[i];
+    arraySum += array;
+  }
+  let averageArray = arraySum / 5;
+  let toFixedArray = Number(averageArray.toFixed(2));
+  return toFixedArray;
+}
+let inputArrayNumber = average([75.25, 65, 80, 35.45, 99.5]);
+console.log(inputArrayNumber);
+let inputArrayNumber2 = average([100, 100, 100, 100, 100]);
+console.log(inputArrayNumber2);
+
+// The first line of the input is the taka Harry’s mom gave him.
+
+// The second line is the cost of 1 kg of oranges and 1 kg of apples.
+
+// Sample Input:
+// 1000
+// 700
+// Output: 300
+
+function subtraction(num1, num2) {
+  let getBackMoney = num1 - num2;
+  return getBackMoney;
+}
+let givenMomMoney = subtraction(1000, 700);
+console.log(givenMomMoney);
+
+// Convert temperature
+// The formula below shows how to convert from Fahrenheit to Celsius temperature measurements:
+
+// ℃=(℉-32)/1.8
+
+// Case 1:
+// Input: temperatureConverter(50)
+// Output: 10
+
+// Case 2:
+// Input: temperatureConverter(103)
+// Output: 39.44
+
+function temperatureConverter(valNum) {
+  let celsius = (valNum - 32) / 1.8;
+  let celsiusToFixed = Number(celsius.toFixed(2));
+  return celsiusToFixed;
+}
+let inputTemperature = temperatureConverter(50);
+console.log(inputTemperature);
+let inputTemperature2 = temperatureConverter(103);
+console.log(inputTemperature2);
